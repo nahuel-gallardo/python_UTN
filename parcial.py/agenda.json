@@ -1,0 +1,62 @@
+{
+    "lista_de_consultas": [
+        {
+            "personajes": []
+        },
+        {
+            "personajes": []
+        },
+        {
+            "personajes": []
+        },
+        {
+            "personajes": []
+        },
+        {
+            "personajes": [
+                {
+                    "nombre": "Yamu",
+                    "poder_de_ataque": "350",
+                    "habilidad": null
+                }
+            ]
+        },
+        {
+            "personajes": [
+                {
+                    "nombre": "Yamu",
+                    "poder_de_ataque": "350",
+                    "habilidad": null
+                }
+            ]
+        },
+        {
+            "personajes": [
+                {
+                    "nombre": "Spopovich",
+                    "poder_de_ataque": "300",
+                    "habilidad": null
+                },
+                {
+                    "nombre": "Yamu",
+                    "poder_de_ataque": "350",
+                    "habilidad": null
+                }
+            ]
+        },
+        {
+            "personajes": [
+                {
+                    "nombre": "Spopovich",
+                    "poder_de_ataque": "300",
+                    "habilidad": null
+                },
+                {
+                    "nombre": "Yamu",
+                    "poder_de_ataque": "350",
+                    "habilidad": null
+                }
+            ]
+        }
+    ]
+}
