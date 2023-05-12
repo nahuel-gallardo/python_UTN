@@ -64,20 +64,26 @@ def listar_personajes_por_raza(lista:list,clave:str):
         print(f"\n{raza}")
         for personaje in lista:
             if personaje["raza"] == raza:
-                personaje = f"\t{personaje['nombre']} - poder de ataque: {personaje['poder_de_ataque']}"
+            #   personaje = f"\t{personaje['nombre']} - poder de ataque: {personaje['poder_de_ataque']}"
                 print(f"\t{personaje['nombre']} - poder de ataque: {personaje['poder_de_ataque']}")
 
-def Listar_personajes_por_habilidad(lista:list,valor:str):
-    for personaje in lista:
+def Listar_personajes_por_habilidad():
+    contador = 0
+    heroes_con_habilidad_en_comun = []
+    valor = str(input("ingrese en nombre de unna habilidad : ")).capitalize().strip()
+    for personaje in lista_de_diccionarios:
         for habilidad in personaje["habilidades"]:
             habilidad.strip()
             if valor == habilidad:
-                print("entro")
+                contador += 1
                 promedio = (int(personaje['poder_de_pelea']) + int(personaje['poder_de_ataque'])) / 2 
                 dato = f"{personaje['nombre']} - {personaje['raza']} - poder promedio: {promedio}"
-                return dato
-            else:
-                print("esa no existe")
+                print(dato)
+                heroes_con_habilidad_en_comun.append(dato)
+    if contador == 0:
+        print("esa habilidad no existe")
+            
+    return heroes_con_habilidad_en_comun
 
 def jugar_batalla(nombre:str):
     numero_random = random.randint(0 , 35 ) 
@@ -104,6 +110,14 @@ def jugar_batalla(nombre:str):
         "fecha" : fecha
     }
     return dict_1
+
+def cargar_archivo():
+    with open("ganador_batalla.txt","a",encoding = "utf-8") as archivo_1:
+        nombre = input("ingrese el nombre de un personaje: ").capitalize()
+        diccionario = jugar_batalla(nombre)
+        return archivo_1.write(f"\n{diccionario}")
+
+
 
 def filtrar_por_habilidad_y_raza(habilidad:str,raza:str):
     lista_personajes_filtrados = []
@@ -156,12 +170,10 @@ def dic_formato_json(list_raza_habilidad:list,habilidad_ingesada:str):
     return dict_formato
         
 
-crear_json()
 
-cargar_json()
-
-
-
+def leer_json():
+    with open("agenda.json","r") as mi_archivo:
+        
 
 
 
@@ -174,9 +186,9 @@ cargar_json()
 menu = ["1.traer datos desde archivo",
         "2.listar cantidad por raza",
         "3.listar personajes por raza",
-        "4.listar personajes por habilidad"
-        "5.jugar batalla"
-        "6.guardar json"
+        "4.listar personajes por habilidad",
+        "5.jugar batalla",
+        "6.guardar json",
         "7.leer json",
         "8.salir"
         ]
@@ -185,7 +197,7 @@ seguir = True
 while True:
     for opcion in menu:
         print(opcion)
-    respuesta = int(input("ingrese una opcion"))
+    respuesta = int(input("ingrese una opcion: "))
     match respuesta:
         case 1:
             mostrar_lista_completa(lista_de_diccionarios)
@@ -194,9 +206,9 @@ while True:
         case 3:
             listar_personajes_por_raza(lista_de_diccionarios,"raza")
         case 4:
-            Listar_personajes_por_habilidad(lista_de_diccionarios," ")
+            Listar_personajes_por_habilidad()
         case 5:
-            jugar_batalla("nombre")
+            cargar_archivo()
         case 6:
             cargar_json()
         case 7:

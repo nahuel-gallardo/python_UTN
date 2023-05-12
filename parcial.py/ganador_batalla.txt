@@ -1,3 +1,5 @@
 
-{'ganador': 'Goku', 'perdedor': 'Goten', 'fecha': '05/11/23'}
-{'ganador': 'Goku', 'perdedor': 'Babidi', 'fecha': '05/11/23'}
+{'ganador': 'Cell', 'perdedor': 'Androide 18', 'fecha': '05/12/23'}
+{'ganador': 'Cell', 'perdedor': 'Babidi', 'fecha': '05/12/23'}
+{'ganador': 'Goku', 'perdedor': 'Goten', 'fecha': '05/12/23'}
+{'ganador': 'Cell', 'perdedor': 'Goku', 'fecha': '05/12/23'}
