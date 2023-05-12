@@ -148,7 +148,7 @@ def crear_json():
 
 def cargar_json():
     with open("agenda.json","r") as mi_archivo:
-        dict_general = json.load(mi_archivo)
+        dict_general = json.dump(mi_archivo)
     with open("agenda.json","w") as mi_archivo:
         habilidad_ingresada = input("ingrese una habilidad: ")
         raza_ingresada = input("ingrese una raza: ")
@@ -173,7 +173,9 @@ def dic_formato_json(list_raza_habilidad:list,habilidad_ingesada:str):
 
 def leer_json():
     with open("agenda.json","r") as mi_archivo:
-        
+        print(mi_archivo)
+
+
 
 
 
