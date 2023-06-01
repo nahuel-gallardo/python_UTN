@@ -176,6 +176,15 @@ def leer_json():
         print(mi_archivo)
 
 
+def aumentar():
+    for personaje in lista_de_diccionarios:
+        for raza in personaje["raza"]:
+            if raza == "Saiyan":
+                personaje["poder_de_pelea"] = int(personaje["poder_de_pelea"]) * 1.50
+                personaje["poder_de_ataque"] = int(personaje["pode_de_ataque"]) * 1.70
+                
+            
+
 
 
 

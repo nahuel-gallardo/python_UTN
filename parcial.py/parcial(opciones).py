@@ -131,5 +131,15 @@ def cargar_archivo():
 
 
 
-listar_personajes_por_raza(lista_de_diccionarios,"raza")
+def aumentar():
+    valor = "Saiyan"
+    for personaje in lista_de_diccionarios:
+        for raza in personaje["raza"].split():
+            if raza == valor:
+                print("entro")
+                poder_de_pelea_aumnetado = int(personaje["poder_de_pelea"]) * 1.5
+                poder_de_ataque_aumentado = int(personaje["poder_de_ataque"]) * 1.7
+            
 
+    
+aumentar()
